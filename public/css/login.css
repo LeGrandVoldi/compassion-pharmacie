@@ -1,0 +1,221 @@
+/* =============================================
+   COMPASSION PHARMACIE - Login Page Styles
+   ============================================= */
+
+body.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #c8dff5 0%, #d6eaf8 30%, #e8f4fc 60%, #c5d8ed 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative blobs */
+body.login-page::before,
+body.login-page::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  opacity: 0.15;
+}
+
+body.login-page::before {
+  width: 400px; height: 400px;
+  background: #90c8f0;
+  bottom: -80px; left: -80px;
+}
+
+body.login-page::after {
+  width: 300px; height: 300px;
+  background: #5ba8d8;
+  top: -60px; right: -60px;
+}
+
+.login-bg-cross {
+  position: fixed;
+  font-size: 200px;
+  opacity: 0.04;
+  color: #1a73e8;
+  pointer-events: none;
+}
+
+.login-bg-cross.bl { bottom: 5%; left: 2%; }
+.login-bg-cross.tr { top: 5%; right: 2%; font-size: 150px; }
+
+/* EKG line decoration */
+.ekg-decoration {
+  position: fixed;
+  bottom: 30%;
+  left: 0;
+  right: 0;
+  height: 60px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.login-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.login-subtitle {
+  font-size: 15px;
+  color: #7a8fa6;
+  margin-bottom: 28px;
+  text-align: center;
+  animation: fadeInUp 0.7s ease;
+  letter-spacing: 0.3px;
+}
+
+.login-card {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 36px 40px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(26,115,232,0.12), 0 2px 8px rgba(0,0,0,0.06);
+  animation: fadeInUp 0.8s ease;
+}
+
+.login-field {
+  margin-bottom: 20px;
+}
+
+.login-field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.login-field .input-group {
+  position: relative;
+}
+
+.login-field .input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 16px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.login-field input,
+.login-field .form-input {
+  width: 100%;
+  padding: 13px 16px 13px 44px;
+  border: 1.5px solid #dde3ed;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #1e293b;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fafbfc;
+  box-shadow: none;
+}
+
+.login-field input::placeholder,
+.login-field .form-input::placeholder { color: #b0b9c6; }
+
+.login-field input:focus,
+.login-field .form-input:focus {
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 3px rgba(26,115,232,0.12);
+  background: white;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #1a73e8, #1557b0);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.btn-login:hover {
+  background: linear-gradient(90deg, #1557b0, #0e3d7a);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(26,115,232,0.4);
+}
+
+.btn-login:active { transform: translateY(0); }
+
+.login-forgot {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  color: #1a73e8;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.login-forgot:hover { color: #1557b0; text-decoration: underline; }
+
+.login-footer {
+  margin-top: 28px;
+  color: #8a9ab0;
+  font-size: 13px;
+  text-align: center;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  .login-card { padding: 24px 20px; }
+}
+.login-register {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.login-register a {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+  transition: 0.3s;
+}
+
+.login-register a:hover {
+  text-decoration: underline;
+}
