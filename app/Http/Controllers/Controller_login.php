@@ -218,8 +218,10 @@ class Controller_login extends Controller
                             ->first();
     $id = $existingUser->id;
     $url = MediaUser::query()
-                ->where('user_id', $id)
-                ->first();
+            ->where('user_id', $id)
+            ->first();
+
+    $url = $url ? $url->path : 'uploads/profile-users/default-user.png';
 
             // Connexion
             if ($existingUser) {
@@ -237,7 +239,7 @@ class Controller_login extends Controller
                         'id' => $id,
                         'role' => $existingUser->role,
                         'permissions' => $permissions,
-                        'profileImage' =>$url->path,
+                        'profileImage' =>$url,
                     ]);
 
                     return redirect()->route('dashboard');
@@ -278,7 +280,7 @@ class Controller_login extends Controller
                         'id' => $id,
                         'role' => $existingUser->role,
                         'permissions' => $permissions,
-                        'profileImage' =>$url->path,
+                        'profileImage' =>$url,
 
                     ]);
 
